@@ -1,9 +1,11 @@
 package iocode.web.app.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,19 +19,21 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Book {
 
-//	public Book(String title, String author, String year, double price) {
-//		this.title = title;
-//		this.author = author;
-//		this.year = year;
-//		this.price = price;
-//	}
+	public Book(String title, String author, String year, double price) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.price = price;
+	}
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long bookId;
 	private String title;
-	@ManyToOne
-	private Author author;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name="author")
+	private String author;
 	private String year;
 	private double price;
 

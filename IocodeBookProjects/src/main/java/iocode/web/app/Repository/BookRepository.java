@@ -1,9 +1,9 @@
-package iocode.web.app.entity;
+package iocode.web.app.Repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource
+import iocode.web.app.entity.Book;
+
 public interface BookRepository extends CrudRepository<Book, Long>{
 
 }

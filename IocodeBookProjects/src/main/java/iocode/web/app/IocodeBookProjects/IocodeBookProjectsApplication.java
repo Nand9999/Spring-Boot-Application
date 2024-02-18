@@ -1,27 +1,29 @@
 package iocode.web.app.IocodeBookProjects;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-
+import iocode.web.app.Repository.BookRepository;
 import iocode.web.app.entity.Book;
-import iocode.web.app.entity.BookRepository;
 import lombok.RequiredArgsConstructor;
 
 @SpringBootApplication
-//@RequiredArgsConstructor
-@ComponentScan(basePackages = "iocode.web.app.entity")
-public class IocodeBookProjectsApplication  {
+@RequiredArgsConstructor
+public class IocodeBookProjectsApplication implements CommandLineRunner {
 //	@Autowired
-//	private BookRepository bookRepo;
+	private BookRepository bookRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(IocodeBookProjectsApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		Book book = new Book("Gotham City", "Jeremy Williams","2000", 250.00);
+		bookRepo.save(book);
 	}
 
 
