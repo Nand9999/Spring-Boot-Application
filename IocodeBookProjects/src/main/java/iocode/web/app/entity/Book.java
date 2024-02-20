@@ -31,8 +31,6 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long bookId;
 	private String title;
-//	@ManyToOne(fetch = FetchType.LAZY)
-
 	private String author;
 	private String year;
 	private double price;
