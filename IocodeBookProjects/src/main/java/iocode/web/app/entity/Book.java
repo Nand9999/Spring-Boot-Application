@@ -32,7 +32,7 @@ public class Book {
 	private long bookId;
 	private String title;
 //	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name="author")
+
 	private String author;
 	private String year;
 	private double price;
